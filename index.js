@@ -15,12 +15,18 @@ function addToCart(item) {
   return cart;
 }
 
+function getKey ( obj) {
+  return Object.keys(obj)[0];
+}
+
 function viewCart() {
   if (cart.length === 0) {
     console.log('Your shopping cart is empty.');
   }
   else {
     let str = "In your cart, you have";
+    if (cart.length === 1) {
+      str = str.concat (' ' + getKey(cart[0]) + ' at $' + cart[0][getKey(cart[0]) + '.');
     var i = 0;
     var key;
     while (i<cart.length-1) {
