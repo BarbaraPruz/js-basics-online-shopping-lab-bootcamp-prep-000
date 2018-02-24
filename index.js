@@ -15,6 +15,25 @@ function addToCart(item) {
   return cart;
 }
 
+function viewCart() {
+  if (cart.length === 0) {
+    console.log('Your shopping cart is empty.');
+  }
+  else {
+    let str = "In your cart, you have";
+    var i = 0;
+    var key;
+    while (i<cart.length-1) {
+      key = Object.keys(cart[i])[0];
+      str = str.concat(' ' + key + ' at $' + cart[i][key]+ ',');
+      ++i;
+    }
+    key = Object.keys(cart[i])[0];
+    str = str.concat((i===0) ? ' ' : ' and '); 
+    str = str.concat(key + ' at $' + cart[i][key]+ '.');    
+    console.log(str);
+  }
+}
 
 function total() {
   var sum=0;
