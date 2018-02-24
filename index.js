@@ -24,7 +24,7 @@ function viewCart() {
     var i = 0;
     var key;
     while (i<cart.length-1) {
-      let  key = Object.keys(item)[0];
+      key = Object.keys(item)[0];
       str = str.concat(' ' + key + ' at $' + item[key]+ ' and');
     });
     str = str.slice(0,str.length-4) + '.';    
