@@ -26,17 +26,19 @@ function viewCart() {
   else {
     let str = "In your cart, you have";
     if (cart.length === 1) {
-      str = str.concat (' ' + getKey(cart[0]) + ' at $' + cart[0][getKey(cart[0]) + '.');
-    var i = 0;
-    var key;
-    while (i<cart.length-1) {
-      key = Object.keys(cart[i])[0];
-      str = str.concat(' ' + key + ' at $' + cart[i][key]+ ',');
-      ++i;
+      str = str.concat (' ' + getKey(cart[0]) + ' at $' + cart[0][getKey(cart[0])] + '.');
+    } 
+    else {
+      var i = 0;
+      var key;
+      while (i<cart.length-1) {
+        key = getKey(cart[i]);
+        str = str.concat(' ' + key + ' at $' + cart[i][key]+ ',');
+        ++i;
+      }
+      key = getKey(cart[i]);
+      str = str.concat(' and ' + key + ' at $' + cart[i][key]+ '.');
     }
-    key = Object.keys(cart[i])[0];
-    str = str.concat((i===0) ? ' ' : ' and '); 
-    str = str.concat(key + ' at $' + cart[i][key]+ '.');    
     console.log(str);
   }
 }
