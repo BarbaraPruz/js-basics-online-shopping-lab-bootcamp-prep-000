@@ -36,7 +36,7 @@ function viewCart() {
         str = str.concat(' ' + key + ' at $' + cart[i][key]+ ',');
         ++i;
       }
-      
+      str = str.slice(0,-1);     
       key = getKey(cart[i]);
       str = str.concat(' and ' + key + ' at $' + cart[i][key]+ '.');
     }
