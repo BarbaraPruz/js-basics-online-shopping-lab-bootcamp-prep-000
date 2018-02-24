@@ -27,6 +27,7 @@ function viewCart() {
       key = Object.keys(cart[i])[0];
       str = str.concat(' ' + key + ' at $' + cart[i][key]+ ' and');
     });
+    
     str = str.slice(0,str.length-4) + '.';    
     console.log(str);
   }
