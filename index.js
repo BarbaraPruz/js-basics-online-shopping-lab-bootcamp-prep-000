@@ -21,15 +21,17 @@ function viewCart() {
   }
   else {
     let str = "In your cart, you have"
-    cart.forEach ( function (item ) {
-      var key = Object.keys(item)[0];
+    var i = 0;
+    var key;
+    while (i<cart.length-1) {
+      let  key = Object.keys(item)[0];
       str = str.concat(' ' + key + ' at $' + item[key]+ ' and');
     });
     str = str.slice(0,str.length-4) + '.';    
     console.log(str);
   }
 }
-      
+     In your cart, you have orange at $36, pear at $70, and quince at $97. 
 
 function total() {
   var sum=0;
